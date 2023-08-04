@@ -1,10 +1,12 @@
 const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
+const cors = require("cors");
+
 
 const app = express();
 const port = 4500;
-
+app.use(cors());
 app.use(express.static("public"));
 
 app.get("/generate", async (req, res) => {
